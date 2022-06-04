@@ -393,7 +393,7 @@
                 this.physics.add.collider(this.player, this.planePowerUp, this.addPlane, null, this);
 
 
-                this.shieldPowerUp = this.physics.add.sprite(12982, 1461, 'shieldPower').setScale(0.5);
+                this.shieldPowerUp = this.physics.add.sprite(13343, 1743, 'shieldPower').setScale(0.5);
                 this.physics.add.collider(this.shieldPowerUp, ground);
                 this.physics.add.collider(this.player, this.shieldPowerUp, this.addShield, null, this);
 
@@ -415,7 +415,7 @@
                         this.test.body.setAllowGravity(false)
 
                     } else if (spawnEnemy.type == "Bat") {
-                        this.test2 = this.bat.create(spawnEnemy.x, spawnEnemy.y,'bat').setSize(144, 112).setOffset(16, 16);
+                        this.test2 = this.bat.create(spawnEnemy.x, spawnEnemy.y,'bat').setSize(144, 112).setOffset(0, 16);
                         this.test2.setBounce(1)
                         this.test2.body.setAllowGravity(false)
                     }
@@ -466,8 +466,8 @@
                 //build.setCollisionByProperty({ estSolide: true });
                 this.player.setCollideWorldBounds(true);
                 this.cameras.main.zoom = 1;
-                this.physics.world.setBounds(0, 0, 15232, 3296);
-                this.cameras.main.setBounds(0, 0, 15232, 3296);
+                this.physics.world.setBounds(0, 0, 14512, 3296);
+                this.cameras.main.setBounds(0, 0, 14512, 3296);
                 this.cameras.main.startFollow(this.player);
 
 
@@ -475,13 +475,15 @@
 
                 this.cursors = this.input.keyboard.createCursorKeys();
                 this.keys = this.input.keyboard.addKeys({
-                    z: Phaser.Input.Keyboard.KeyCodes.Z,
-                    q: Phaser.Input.Keyboard.KeyCodes.Q,
-                    d: Phaser.Input.Keyboard.KeyCodes.D,
-                    j: Phaser.Input.Keyboard.KeyCodes.J,
+                    
+                    o: Phaser.Input.Keyboard.KeyCodes.O,
                     k: Phaser.Input.Keyboard.KeyCodes.K,
-                    l: Phaser.Input.Keyboard.KeyCodes.L,
-                    i: Phaser.Input.Keyboard.KeyCodes.I,
+                    m: Phaser.Input.Keyboard.KeyCodes.M,
+                   
+                    q: Phaser.Input.Keyboard.KeyCodes.Q,
+                    s: Phaser.Input.Keyboard.KeyCodes.S,
+                    d: Phaser.Input.Keyboard.KeyCodes.D,
+                    z: Phaser.Input.Keyboard.KeyCodes.Z,
                 });
             }
 
@@ -552,14 +554,14 @@
                 //control
 
                 this.moveUp = Phaser.Input.Keyboard.JustDown(this.cursors.up)
-                this.moveLeft = (this.cursors.left.isDown || this.keys.q.isDown)
-                this.moveRight = (this.cursors.right.isDown || this.keys.d.isDown)
-                this.moveUp = (this.cursors.up.isDown || this.keys.z.isDown)
+                this.moveLeft = (this.cursors.left.isDown || this.keys.k.isDown)
+                this.moveRight = (this.cursors.right.isDown || this.keys.m.isDown)
+                this.moveUp = (this.cursors.up.isDown || this.keys.o.isDown)
 
-                this.toucheBoat = Phaser.Input.Keyboard.JustDown(this.keys.j)
-                this.touchePlane = Phaser.Input.Keyboard.JustDown(this.keys.k)
-                this.toucheShield = Phaser.Input.Keyboard.JustDown(this.keys.l)
-                this.toucheReset = Phaser.Input.Keyboard.JustDown(this.keys.i)
+                this.toucheBoat = Phaser.Input.Keyboard.JustDown(this.keys.q)
+                this.touchePlane = Phaser.Input.Keyboard.JustDown(this.keys.s)
+                this.toucheShield = Phaser.Input.Keyboard.JustDown(this.keys.d)
+                this.toucheReset = Phaser.Input.Keyboard.JustDown(this.keys.z)
 
 
 
@@ -801,7 +803,7 @@
                     this.respawn()
                     player.setVelocityX(0)
                     player.anims.play(this.animTurn, true);
-                    player.setTint(0xff0000)
+                    player.setTint(0x00ffff)
                 }
 
             }
