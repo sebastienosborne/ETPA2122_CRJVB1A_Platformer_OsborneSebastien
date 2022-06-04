@@ -415,7 +415,7 @@
                         this.test.body.setAllowGravity(false)
 
                     } else if (spawnEnemy.type == "Bat") {
-                        this.test2 = this.bat.create(spawnEnemy.x, spawnEnemy.y,'bat').setSize(144, 112).setOffset(0, 16);
+                        this.test2 = this.bat.create(spawnEnemy.x, spawnEnemy.y,'bat').setSize(144, 112).setOffset(0, 0);
                         this.test2.setBounce(1)
                         this.test2.body.setAllowGravity(false)
                     }
@@ -882,7 +882,7 @@
                 default: 'arcade',
                 arcade: {
                     gravity: { y: 1000 },
-                    debug: true
+                    debug: false
                 }
             },
             scene: [menuDebut, Jeu],
