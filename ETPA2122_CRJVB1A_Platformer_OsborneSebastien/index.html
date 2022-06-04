@@ -227,7 +227,7 @@
 
 
 
-                this.barrehp = this.add.sprite(70, 30, 'health_bar anim').setScale(1)
+                this.barrehp = this.add.sprite(100, 40, 'health_bar anim').setScale(2)
                 this.barrehp.setScrollFactor(0)
 
                 this.barrehp.setInteractive()
@@ -384,11 +384,11 @@
 
 
                 //power ups
-                this.boatPowerUp = this.physics.add.sprite(11456, 1748, 'boatPower').setScale(0.5);
+                this.boatPowerUp = this.physics.add.sprite(2340, 2995, 'boatPower').setScale(0.5);
                 this.physics.add.collider(this.boatPowerUp, ground);
                 this.physics.add.collider(this.player, this.boatPowerUp, this.addBoat, null, this);
 
-                this.planePowerUp = this.physics.add.sprite(11457, 1747, 'planePower').setScale(0.5);
+                this.planePowerUp = this.physics.add.sprite(404, 2079, 'planePower').setScale(0.5);
                 this.physics.add.collider(this.planePowerUp, ground);
                 this.physics.add.collider(this.player, this.planePowerUp, this.addPlane, null, this);
 
@@ -478,10 +478,10 @@
                     z: Phaser.Input.Keyboard.KeyCodes.Z,
                     q: Phaser.Input.Keyboard.KeyCodes.Q,
                     d: Phaser.Input.Keyboard.KeyCodes.D,
+                    j: Phaser.Input.Keyboard.KeyCodes.J,
                     k: Phaser.Input.Keyboard.KeyCodes.K,
                     l: Phaser.Input.Keyboard.KeyCodes.L,
-                    m: Phaser.Input.Keyboard.KeyCodes.M,
-                    o: Phaser.Input.Keyboard.KeyCodes.O,
+                    i: Phaser.Input.Keyboard.KeyCodes.I,
                 });
             }
 
@@ -556,10 +556,10 @@
                 this.moveRight = (this.cursors.right.isDown || this.keys.d.isDown)
                 this.moveUp = (this.cursors.up.isDown || this.keys.z.isDown)
 
-                this.toucheBoat = Phaser.Input.Keyboard.JustDown(this.keys.k)
-                this.touchePlane = Phaser.Input.Keyboard.JustDown(this.keys.l)
-                this.toucheShield = Phaser.Input.Keyboard.JustDown(this.keys.m)
-                this.toucheReset = Phaser.Input.Keyboard.JustDown(this.keys.o)
+                this.toucheBoat = Phaser.Input.Keyboard.JustDown(this.keys.j)
+                this.touchePlane = Phaser.Input.Keyboard.JustDown(this.keys.k)
+                this.toucheShield = Phaser.Input.Keyboard.JustDown(this.keys.l)
+                this.toucheReset = Phaser.Input.Keyboard.JustDown(this.keys.i)
 
 
 
